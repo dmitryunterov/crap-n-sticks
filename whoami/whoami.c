@@ -8,6 +8,6 @@ int main(int argc, char *argv[])
 {
 struct passwd *p;
 uid_t uid;
-printf(p->pw_name);
+puts(p->pw_name);
 return(0);
 }
