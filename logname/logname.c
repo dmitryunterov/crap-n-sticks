@@ -6,9 +6,7 @@
 
 int main ()
 {
-	printf(getenv("LOGNAME"));
-	printf("\n");
-//Самому стыдно за такой перенос строк
+	puts(getenv("LOGNAME"));
 	return(0);
 }
 //При компиле ругается, но компилит и работает
