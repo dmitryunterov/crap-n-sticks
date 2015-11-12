@@ -1,3 +1,5 @@
+DESTDIR=/usr/local/bin
+
 all: uds-helloworld uds-logname uds-true uds-false uds-whoami
 
 %: %.c
@@ -5,19 +7,19 @@ all: uds-helloworld uds-logname uds-true uds-false uds-whoami
 	
 install: uds-helloworld uds-logname uds-true uds-false uds-whoami 
 	@[ `id -u` -eq 0 ] || { echo "use sudo make install, Luke"; exit 1; }
-	@install uds-helloworld /usr/local/bin
-	@install uds-true /usr/local/bin
-	@install uds-false /usr/local/bin
-	@install uds-logname /usr/local/bin
-	@install uds-whoami /usr/local/bin
+	@install uds-helloworld $(DESTDIR)
+	@install uds-true $(DESTDIR)
+	@install uds-false $(DESTDIR)
+	@install uds-logname $(DESTDIR)
+	@install uds-whoami $(DESTDIR)
 
 uninstall:
 	@[ `id -u` -eq 0 ] || { echo "use sudo make install, Luke"; exit 1; }
-	@rm /usr/local/bin/uds-helloworld
-	@rm /usr/local/bin/uds-true
-	@rm /usr/local/bin/uds-false
-	@rm /usr/local/bin/uds-whoami
-	@rm /usr/local/bin/uds-logname
+	@rm $(DESTDIR)/uds-helloworld
+	@rm $(DESTDIR)/uds-true
+	@rm $(DESTDIR)/uds-false
+	@rm $(DESTDIR)/uds-whoami
+	@rm $(DESTDIR)/uds-logname
 
 clean:
 	@rm uds-false uds-helloworld uds-true uds-logname uds-whoami
