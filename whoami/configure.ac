@@ -1,0 +1,10 @@
+AC_INIT([uds-whoami], [0.2.0])
+AC_PROG_CC
+AC_CONFIG_FILES(Makefile)
+AC_CHECK_HEADER(pwd.h)
+AC_CHECK_HEADER(stdio.h)
+AC_CHECK_HEADER(stdlib.h)
+AC_CHECK_HEADER(unistd.h)
+AC_CHECK_HEADER(errno.h)
+AC_CHECK_LIB(c)
+AC_OUTPUT
