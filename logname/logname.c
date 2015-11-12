@@ -9,4 +9,3 @@ int main ()
 	puts(getenv("LOGNAME"));
 	return(0);
 }
-//При компиле ругается, но компилит и работает
