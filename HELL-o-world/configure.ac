@@ -1,0 +1,6 @@
+AC_INIT([uds-helloworld], [0.1.2])
+AC_PROG_CC
+AC_CONFIG_FILES(Makefile)
+AC_CHECK_HEADER(stdio.h)
+AC_CHECK_LIB(c)
+AC_OUTPUT
