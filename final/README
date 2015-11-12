@@ -1,0 +1,19 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ uds*-utils-0-0-1-pre-alpha @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+* - uds=unterov dmitry sergeevich
+
+1. Состав пакета:
+uds-helloworld
+uds-logname
+uds-whoami
+uds-true
+uds-false
+
+2. Установка
+make && sudo make install
+
+3. Другие доступные опции 
+make uninstall - удаление из системы
+make distrib - создать архив с исходными текстами
+
