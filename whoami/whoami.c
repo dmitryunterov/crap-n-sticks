@@ -6,10 +6,6 @@
 //"шапку" взял из примера в мане по getpwnam. На всякий случай полностью.)
 int main(int argc, char *argv[])
 {
-struct passwd *p;
-uid_t uid;
-uid = geteuid ();
-p = getpwuid (uid);
-puts(p->pw_name);
-return(0);
-}
+	puts(getpwuid (geteuid())->pw_name);
+	return EXIT_SUCCESS;
+ }
