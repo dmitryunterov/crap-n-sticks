@@ -15,9 +15,9 @@ int main(int argc, char* argv[])
 //gdeproc и argument1 а вышестоящий strcat склеивает это значение с /cwd и отдаёт
 //суммарное значение как значение пересенной skleika
 	char buf[1024];
-	char* gde = skleika;
+//	char* gde = skleika;
 //Нужна ли эта переменная или readlink сожрёт сразу значение склейки?.
-	int func = readlink (gde, buf, sizeof (buf));
+	int func = readlink (skleika, buf, sizeof (buf));
 	buf[func] = '\0';
 	printf("%s\n", buf);
 	return 0;
