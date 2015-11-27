@@ -1,6 +1,6 @@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@ uds-pwdx-0-0-1-pre-alpha  @
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ uds-pwdx&uds-envx early pre-pre-alpha 0.1 build 100500 @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 1. Установка
 make && sudo make install
@@ -9,3 +9,6 @@ make && sudo make install
 make uninstall - удаление из системы
 make distrib - создать архив с исходными текстами
 
+3. Использование
+sudo uds-pwdx PID
+sudo uds-envx PID

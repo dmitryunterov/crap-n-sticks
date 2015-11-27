@@ -15,6 +15,7 @@ install: uds-pwdx uds-envx
 	@install uds-pwdx $(DESTDIR)
 	@install uds-envx $(DESTDIR)
 	@cp libmylib.so $(LIBDIR)
+	@ldconfig
 
 uninstall:
 	@[ `id -u` -eq 0 ] || { echo "use sudo make uninstall, Luke"; exit 1; }
