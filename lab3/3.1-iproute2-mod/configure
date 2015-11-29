@@ -25,6 +25,16 @@ then
 
 fi
 
+if [ ! -e /usr/include/db_185.h ]
+
+then
+
+	echo 'Отстствует необходимый пакет libdb-dev, выполните sudo apt-get install libdb'
+	
+	exit
+
+fi
+
 INCLUDE=${1:-"$PWD/include"}
 
 # Make a temp directory in build tree.
