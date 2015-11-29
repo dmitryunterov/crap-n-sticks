@@ -1,6 +1,30 @@
 #! /bin/bash
 # This is not an autoconf generated configure
 #
+
+#Проверка на наличие пакета bison
+if [ $(dpkg-query -W -f='${Status}' bison 2>/dev/null | grep -c "ok installed") -eq 0 ]
+
+then
+
+	echo 'Отстствует необходимый пакет bison, выполните sudo apt-get install bison'
+
+	exit
+
+fi
+
+#Проверка на наличие пакета flex
+
+if [ $(dpkg-query -W -f='${Status}' flex 2>/dev/null | grep -c "ok installed") -eq 0 ]
+
+then
+
+	echo 'Отстствует необходимый пакет flex, выполните sudo apt-get install flex'
+
+	exit
+
+fi
+
 INCLUDE=${1:-"$PWD/include"}
 
 # Make a temp directory in build tree.
