@@ -4,35 +4,15 @@
 
 #Проверка на наличие пакета bison
 
-#if [  $(command -v flex >/dev/null) -eq `1` ];
-
-#then
-
-#	echo 'Отстствует необходимый пакет bison'
-
-#	exit
-
-#fi
-
-which bison 1>/dev/null  || { echo  "Отсутствует необходимая программа bison"; exit 1; }
+command -v bison >/dev/null 2>&1 && (echo "Bison found") || (echo "!!!__Bison NOT found__!!!");
 
 #Проверка на наличие пакета flex
 
-#if [ $(dpkg-query -W -f='${Status}' flex 2>/dev/null | grep -c "ok installed") -eq 0 ]
-
-#then
-
-#	echo 'Отстствует необходимый пакет flex'
-
-#	exit
-
-#fi
-
-which flex 1>/dev/null  || { echo  "Отсутствует необходимая программа flex"; exit 1; }
+command -v flex >/dev/null 2>&1 && (echo "Flex found") || (echo "!!!__Flex NOT found__!!!");
 
 #Проверка Berkeley DB
 
-if [ ! -e /usr/include/db_185.h ]
+if [ ! -e /usr/include/db_185.h ];
 
 then
 
