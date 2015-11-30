@@ -3,33 +3,40 @@
 #
 
 #Проверка на наличие пакета bison
-if [ $(dpkg-query -W -f='${Status}' bison 2>/dev/null | grep -c "ok installed") -eq 0 ]
 
-then
+#if [  $(command -v flex >/dev/null) -eq `1` ];
 
-	echo 'Отстствует необходимый пакет bison, выполните sudo apt-get install bison'
+#then
 
-	exit
+#	echo 'Отстствует необходимый пакет bison'
 
-fi
+#	exit
+
+#fi
+
+which bison 1>/dev/null  || { echo  "Отсутствует необходимая программа bison"; exit 1; }
 
 #Проверка на наличие пакета flex
 
-if [ $(dpkg-query -W -f='${Status}' flex 2>/dev/null | grep -c "ok installed") -eq 0 ]
+#if [ $(dpkg-query -W -f='${Status}' flex 2>/dev/null | grep -c "ok installed") -eq 0 ]
 
-then
+#then
 
-	echo 'Отстствует необходимый пакет flex, выполните sudo apt-get install flex'
+#	echo 'Отстствует необходимый пакет flex'
 
-	exit
+#	exit
 
-fi
+#fi
+
+which flex 1>/dev/null  || { echo  "Отсутствует необходимая программа flex"; exit 1; }
+
+#Проверка Berkeley DB
 
 if [ ! -e /usr/include/db_185.h ]
 
 then
 
-	echo 'Отстствует необходимый пакет libdb-dev, выполните sudo apt-get install libdb-dev'
+	echo 'Отстствует необходимый пакет Berkeley DB'
 	
 	exit
 
